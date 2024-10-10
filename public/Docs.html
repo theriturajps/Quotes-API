@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap" rel="stylesheet">
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/docs.css">
+    <script defer src="./js/script.js"></script>
+    <title>Free Quotes API - Docs</title>
+    <meta name="description" content="Get random free inspirational and motivational quotes from our Open Source Quotes API. Perfect for daily inspiration.">
+    <meta name="keywords" content="Quotes API, Free Quotes, Inspirational Quotes, Motivational Quotes, Open Source">
+    <meta name="author" content="Ritu Raj Pratap Singh">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Free Quotes API",
+            "url": "https://qapi.vercel.app/",
+            "description": "Get random free inspirational and motivational quotes."
+        }
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <label>Free Quotes API</label>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/"><b>Home</b></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/docs"><b>Docs</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/api/quotes"><b>Quotes</b></a>
+                    </li>                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="/api/random"><b>Random</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://github.com/theriturajps/quotes-api"><b>GitHub</b></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+        <h2>API Documentation</h2>
+        <hr>
+        <h3><b>Getting Started</b></h3>
+        <p>This Free Quotes API is designed to help you easily integrate inspirational, motivational free quotes into your applications.</p>
+         <hr>
+        <h3><b>API Endpoints</b></h3>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Endpoint</th>
+                    <th>Method</th>
+                    <th>URL</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>All Quotes</td>
+                    <td>GET</td>
+                    <td><a href="/api/quotes">/api/quotes</a></td>
+                </tr>
+                <tr>
+                    <td>Random Quote</td>
+                    <td>GET</td>
+                    <td><a href="/api/random">/api/random</a></td>
+                </tr>
+                <tr>
+                    <td>Quote by ID</td>
+                    <td>GET</td>
+                    <td><a href="/api/quotes/1">/api/quotes/1</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+        <h3><b>Example Responses</b></h3>
+
+        <div class="code-block">
+            <label><b>Random Quote - /api/random</b></label>
+            <pre><code>{
+    "id" : 1, 
+    "quote": "Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful.",
+    "author": "Albert Schweitzer"
+}</code></pre>
+        </div>
+
+        <div class="code-block">
+            <label><b>All Quotes - /api/quotes</b></label>
+            <pre><code>[
+    {
+        "id": 1,
+        "quote": "The best way to get started is to quit talking and begin doing.",
+        "author": "Walt Disney"
+    },
+    {
+        "id": 2,
+        "quote": "The pessimist sees difficulty in every opportunity. The optimist sees opportunity in every difficulty.",
+        "author": "Winston Churchill"
+    },
+    {
+        "id": 3,
+        "quote": "Don’t let yesterday take up too much of today.",
+        "author": "Will Rogers"
+    }
+]</code></pre>
+        </div>
+
+        <div class="code-block">
+            <label><b>Quote by ID - /api/quotes/1</b></label>
+            <pre><code>{
+    "id": 1,
+    "quote": "The best way to get started is to quit talking and begin doing.",
+    "author": "Walt Disney"
+}</code></pre>
+        </div>
+
+        <hr>
+        <h3><b>Rate Limiting</b></h3>
+        <ul>
+            <li>Window Duration: 15 minutes</li>
+            <li>Maximum Requests: 200 requests per IP within the window duration</li>
+        </ul>
+        <p>Response on Limit Exceed:</p>
+        <div class="code-block">
+            <pre><code>{
+  "message": "Too many requests from this IP, please try again after 15 minutes"
+}</code></pre>
+        </div>
+        <hr>
+        <h3><b>Usage</b></h3>
+        <p>You can use the API to display quotes on your website or application to motivate your users. Here are some
+            examples of how you can use the API with JavaScript:</p>
+
+        <div class="code-block">
+            <label><b>Get Random Quote</b></label>
+            <pre><code>fetch('https://qapi.vercel.app/api/random')
+    .then(response => response.json())
+    .then(data => {
+        console.log(data.quote);
+        console.log("- " + data.author);
+    });</code></pre>
+        </div>
+
+        <div class="code-block">
+            <label><b>Get All Quotes</b></label>
+            <pre><code>fetch('https://qapi.vercel.app/api/quotes')
+    .then(response => response.json())
+    .then(data => {
+        data.forEach(quote => {
+            console.log(quote.quote);
+            console.log("- " + quote.author);
+        });
+    });</code></pre>
+        </div>
+
+        <div class="code-block">
+        <label><b>Get Quote by ID</b></label>
+            <pre><code>const quoteId = 1; // Example ID
+fetch(`https://qapi.vercel.app/api/quotes/${quoteId}`)
+    .then(response => response.json())
+    .then(data => {
+        console.log(data.quote);
+        console.log("- " + data.author);
+    });</code></pre>
+        </div>
+    </main>
+    <footer class="footer bg-light text-center py-3">
+        <div class="container">
+            <p class="mb-3">© 2024 <a href="/" target="_blank">Free Quotes API</a>. All rights reserved.</p>
+            <p class="mb-0">Created with <i class="fas fa-heart"></i> by <a href="https://github.com/theriturajps" target="_blank">Ritu Raj</a></p>
+        </div>
+    </footer>
+    
+    <script src="./js/jquery.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

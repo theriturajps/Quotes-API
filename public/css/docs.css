@@ -1,0 +1,121 @@
+body {
+    font-family: "Noto Sans", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+.navbar {
+    margin-bottom: 80px;
+}
+
+.navbar-brand label {
+    font-weight: bold;
+}
+
+.container {
+    display: flex;
+    justify-content: right;
+    flex-direction: column;
+    margin: 24px;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+}
+
+.doc-section {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.doc-section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.doc-section h3 {
+    font-size: 24px;
+    margin-top: 20px;
+    color: #333;
+}
+
+.doc-section p, .doc-section ul {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.code-block {
+    background: #f1f1f1;
+    border-radius: 5px;
+    padding: 15px;
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+.code-block pre {
+    margin: 0;
+}
+
+pre {
+    display: block;
+    font-size: 87.5%;
+    color: #fff;
+    background-color: #1a1919f7;
+    padding: 0.8em;
+    border-radius: 0.5em;
+}
+
+@media (max-width: 768px) {
+    .doc-section {
+        padding: 20px;
+    }
+
+    .code-block {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .doc-section h2 {
+        font-size: 24px;
+    }
+
+    .doc-section h3 {
+        font-size: 20px;
+    }
+
+    .doc-section p, .doc-section ul {
+        font-size: 14px;
+    }
+}
+
+.footer {
+    background-color: #f8f9fa;
+    color: #6c757d;
+    border-top: 1px solid #e9ecef;
+}
+
+.footer a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer .container {
+    max-width: 1140px;
+    margin: 0 auto;
+    font-size: 0.9em;
+}

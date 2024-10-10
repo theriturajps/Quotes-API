@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap" rel="stylesheet">
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <script defer src="./js/script.js"></script>
+    <title>Free Quotes API - A free and Open Source Quotes API</title>
+    <meta name="description" content="Get random free inspirational and motivational quotes from our Open Source Quotes API. Perfect for daily inspiration.">
+    <meta name="keywords" content="Quotes API, Free Quotes, Inspirational Quotes, Motivational Quotes, Open Source">
+    <meta name="author" content="Ritu Raj Pratap Singh">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Free Quotes API",
+            "url": "https://qapi.vercel.app/",
+            "description": "Get random free inspirational and motivational quotes."
+        }
+    </script>
+    <style>.quote-container {text-align: center;margin-top: 1em;} .sub-container {display: flex;justify-content: center;align-items: center;margin-bottom: 0.4em;} #quoteLink {word-break: break-all;}</style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><label><b>Free Quotes API</b></label></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active"><a class="nav-link" href="/"><b>Home</b></a></li>
+                    <li class="nav-item"><a class="nav-link" href="/docs"><b>Docs</b></a></li>
+                    <li class="nav-item"><a class="nav-link" href="/api/quotes"><b>Quotes</b></a></li>
+                    <li class="nav-item"><a class="nav-link" href="/api/random"><b>Random</b></a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://github.com/theriturajps/quotes-api"><b>GitHub</b></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container text-center">
+        <h1 id="typing-heading"></h1>
+        <p>Get Random Free inspirational and motivational quotes. It's a free and Open Source API.</p>
+        <div class="sub-container">
+            <label id="quoteLink" style="margin: 9px; font-size: 0.9em;" class="text-break">https://qapi.vercel.app/api/random</label>
+            <button class="btn btn-success ml-3" onclick="copyToClipboard()"><i class="fas fa-copy"></i></button>
+        </div>
+        <div class="quote-container">
+            <h3 style="display: none;" id="quote"></h3>
+            <h6 style="display: none;" id="quoteAuthor"></h6>
+            <button class="btn btn-success mt-2" onclick="get_random_quote()">GET</button>
+        </div>
+    </div>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
